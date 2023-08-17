@@ -10,8 +10,8 @@ public:
                nums[i]=nums[i]/10;
                c++;
            }
-            if(c%2==0)cnt++;
+            if(c&1)cnt++;
         }
-        return cnt;
+        return n-cnt;
     }
 };
