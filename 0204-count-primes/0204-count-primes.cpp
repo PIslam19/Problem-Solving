@@ -6,20 +6,20 @@ public:
         memset(prime,0,sizeof(prime));
         for(long long i=2;i*i<=n-1;i++)
         {
-            if(prime[i]==0)
+            if(prime[i]==false)
             {
                 for(long long j=i*i;j<=n-1;j+=i)
                 {
-                    if(prime[j]==0)
+                    if(prime[j]==false)
                     {
-                        prime[j]=1;
+                        prime[j]=true;
                     }
                 }
             }
         }
         for(long long i=2;i<=n-1;i++)
         {
-            if(prime[i]==0)
+            if(prime[i]==false)
             {
                 cnt++;
             }
