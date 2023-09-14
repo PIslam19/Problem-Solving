@@ -1,18 +1,13 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int sum=0;
-        int index=nums[0];
-        int n=nums.size();
-        for(int i=0;i<n;i++)
+        ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+        int a=0,b=INT_MIN;
+        for(auto u:nums)
         {
-            sum+=nums[i];
-            index=max(index,sum);
-            if(sum<0)
-            {
-                sum=0;
-            }
+            a=max(u,a+u);
+            b=max(b,a);
         }
-        return index;
+        return b;
     }
 };
