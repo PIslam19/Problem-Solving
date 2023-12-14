@@ -3,7 +3,7 @@ class Solution {
     {
         int start=0,ans=0;
         int end=ar.length -1;
-        while(start<=end)
+        while(start<end)
         {
             int mid=start+(end-start)/2;
             if(ar[mid]>ar[start])
