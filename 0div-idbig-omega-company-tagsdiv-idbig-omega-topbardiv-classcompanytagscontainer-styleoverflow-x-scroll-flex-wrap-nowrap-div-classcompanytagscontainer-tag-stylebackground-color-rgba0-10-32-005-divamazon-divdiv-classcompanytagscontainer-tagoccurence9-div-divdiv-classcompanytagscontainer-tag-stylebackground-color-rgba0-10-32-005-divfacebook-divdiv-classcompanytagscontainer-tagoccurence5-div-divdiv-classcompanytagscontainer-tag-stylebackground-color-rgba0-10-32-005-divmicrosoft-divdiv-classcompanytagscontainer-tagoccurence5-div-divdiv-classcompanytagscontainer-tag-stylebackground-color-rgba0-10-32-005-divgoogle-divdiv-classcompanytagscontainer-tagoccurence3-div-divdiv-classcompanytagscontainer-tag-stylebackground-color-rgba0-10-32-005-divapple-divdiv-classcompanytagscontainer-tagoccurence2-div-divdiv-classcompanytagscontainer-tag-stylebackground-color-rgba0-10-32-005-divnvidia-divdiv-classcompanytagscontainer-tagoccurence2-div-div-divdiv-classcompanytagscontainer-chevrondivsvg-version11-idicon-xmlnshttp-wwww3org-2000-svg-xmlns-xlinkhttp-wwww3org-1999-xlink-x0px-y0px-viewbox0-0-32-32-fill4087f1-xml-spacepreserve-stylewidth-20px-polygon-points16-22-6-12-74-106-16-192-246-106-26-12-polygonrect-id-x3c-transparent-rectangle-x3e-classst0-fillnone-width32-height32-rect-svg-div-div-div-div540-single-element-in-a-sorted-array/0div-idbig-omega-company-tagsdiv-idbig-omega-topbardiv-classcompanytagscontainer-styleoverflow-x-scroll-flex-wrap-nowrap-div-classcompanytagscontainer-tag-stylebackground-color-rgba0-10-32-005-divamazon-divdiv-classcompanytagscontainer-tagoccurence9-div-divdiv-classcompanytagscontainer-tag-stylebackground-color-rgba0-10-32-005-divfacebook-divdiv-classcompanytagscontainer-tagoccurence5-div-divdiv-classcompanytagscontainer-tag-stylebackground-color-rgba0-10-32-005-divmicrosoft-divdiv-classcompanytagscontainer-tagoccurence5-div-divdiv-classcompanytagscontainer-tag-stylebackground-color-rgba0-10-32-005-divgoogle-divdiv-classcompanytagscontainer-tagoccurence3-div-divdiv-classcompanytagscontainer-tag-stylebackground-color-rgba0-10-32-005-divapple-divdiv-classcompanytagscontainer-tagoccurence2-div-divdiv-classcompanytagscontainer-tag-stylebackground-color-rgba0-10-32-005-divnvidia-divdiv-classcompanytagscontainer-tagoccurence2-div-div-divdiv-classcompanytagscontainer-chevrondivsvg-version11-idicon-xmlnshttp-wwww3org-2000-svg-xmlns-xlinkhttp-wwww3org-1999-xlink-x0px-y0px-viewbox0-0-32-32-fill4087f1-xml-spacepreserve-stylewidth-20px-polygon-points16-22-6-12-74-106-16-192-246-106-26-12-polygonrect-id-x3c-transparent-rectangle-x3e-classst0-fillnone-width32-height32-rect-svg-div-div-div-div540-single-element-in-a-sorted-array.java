@@ -1,11 +1,37 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
-        int n=nums.length;
-        int ans=0;
-        for(int i=0;i<n;i++)
+        int start=0;
+        int end=nums.length-1;
+        while(start<end)
         {
-            ans^=nums[i];
+            int mid=start+(end-start)/2;
+            if(nums[mid]==nums[mid-1])
+            {
+                    if((end-mid)%2==0)
+                    {
+                        end=mid-2;
+                    }
+                    else
+                    {
+                        start=mid+1;
+                    }
+            }
+            else if(nums[mid]==nums[mid+1])
+            {
+                if((mid-start)%2==0)
+                    {
+                        start=mid+2;
+                    }
+                    else
+                    {
+                        end=mid-1;
+                    }
+            }
+            else
+            {
+                return nums[mid];
+            }
         }
-        return ans;
+       return nums[end];
     }
 }
